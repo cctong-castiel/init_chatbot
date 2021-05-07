@@ -8,6 +8,11 @@ intents:
   - mood_great
   - mood_unhappy
   - bot_challenge
+  - ask_stock_price
+  - stock
+
+actions:
+  - action_stock_price
 
 entities:
   - stock_type
@@ -48,6 +53,9 @@ slots:
 responses:
   utter_greet:
   - text: "Hey! Nice to meet you. I am a Tong Cruise chatbot. I can help 'ask stock price', 'transfer money' and 'check balance'. Which one you want me to do?"
+
+  utter_ask_stock_price:
+  - text: "What stock you want to know?"
 
   utter_cheer_up:
   - text: "Here is something to cheer you up:"
