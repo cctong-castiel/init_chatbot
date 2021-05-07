@@ -41,3 +41,18 @@ stories:
   - action: action_stock_price
   - intent: goodbye
   - action: utter_goodbye
+
+- story: ask_stock_price_happy2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_stock_price
+  - action: utter_ask_stock_price
+  - intent: nlu_fallback
+    entities:
+    - stock_type: 0001.HK
+  - slot_was_set:
+    - stock_type: 0001.HK
+  - action: action_stock_price
+  - intent: goodbye
+  - action: utter_goodbye

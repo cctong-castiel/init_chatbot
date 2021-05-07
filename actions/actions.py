@@ -69,7 +69,7 @@ class ActionStockPrice(Action):
         print(res)
         if res is not None:
             if len(res)>=0:
-                dispatcher.utter_message(text=f"Found the following {stock} with price {price}:")
+                dispatcher.utter_message(text=f"Found the following {stock} with price:")
                 for r in res:
                     dispatcher.utter_message(text=f"{r[0]} -  {currency} {r[1]}")
         else:
