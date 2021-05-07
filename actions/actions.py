@@ -25,13 +25,7 @@ def create_con(config):
     PORT = config['redshift']['PORT']
     USER = config['redshift']['USER']
     PASSWORD = config['redshift']['PASSWORD']
-    '''
-    DBNAME = "chatbotdb"
-    HOST = "chatbotclass.cyyk9dforfru.us-east-1.redshift.amazonaws.com"
-    PORT = "5440"
-    USER = "chatbotclass"
-    PASSWORD = "Chatbotclass123"
-    '''
+
     con=psycopg2.connect(f"dbname={DBNAME} host={HOST} port={PORT} user={USER} password={PASSWORD}")
     return con
 
