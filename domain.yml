@@ -9,9 +9,45 @@ intents:
   - mood_unhappy
   - bot_challenge
 
+entities:
+  - stock_type
+
+slots:
+  stock_type:
+    type: categorical
+    values:
+      - AAPL
+      - HSBC
+      - ANZ
+      - WESTPAC
+      - UOB
+      - CITI
+      - 0001.HK
+      - 0002.HK
+      - 0003.HK
+      - 0004.HK
+      - 0005.HK
+      - 0006.HK
+      - 0007.HK
+      - 0011.HK
+      - 0012.HK
+      - 0066.HK
+      - 0083.HK
+      - 0101.HK
+      - 0386.HK
+      - 0288.HK
+      - 0939.HK
+      - 0941.HK
+      - 1113.HK
+      - 1109.HK
+      - 1928.HK
+
+
+
+
 responses:
   utter_greet:
-  - text: "Hey! How are you?"
+  - text: "Hey! Nice to meet you. I am a Tong Cruise chatbot. I can help 'ask stock price', 'transfer money' and 'check balance'. Which one you want me to do?"
 
   utter_cheer_up:
   - text: "Here is something to cheer you up:"

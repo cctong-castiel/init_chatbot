@@ -19,7 +19,7 @@ nlu:
 
 - intent: goodbye
   examples: |
-    - good afternoon
+    - dockergood afternoon
     - cu
     - good by
     - cee you later
@@ -91,3 +91,20 @@ nlu:
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+
+- intent: ask_stock_price
+  examples: |
+    - ask_stock_price
+    - stock price please
+    - stock price
+    - I want some stock?
+    - Give me some stock?
+    - stock now
+    - provide info of some stock please?
+    - tell me info stock
+    - stock of [AAPL](stock_type)
+    - [0001.HK](stock_type)
+    - give me inof of [AMZ](stock_type)
+    - Give me [0003.HK](stock_type)
+    - [0941.HK](stock_type) please
+    - [1928.HK](stock_type) now
