@@ -1,14 +1,11 @@
 version: "2.0"
-
 stories:
-
 - story: happy path
   steps:
   - intent: greet
   - action: utter_greet
   - intent: mood_great
   - action: utter_happy
-
 - story: sad path 1
   steps:
   - intent: greet
@@ -18,7 +15,6 @@ stories:
   - action: utter_did_that_help
   - intent: affirm
   - action: utter_happy
-
 - story: sad path 2
   steps:
   - intent: greet
@@ -28,7 +24,6 @@ stories:
   - action: utter_did_that_help
   - intent: deny
   - action: utter_goodbye
-
 - story: ask_stock_price_happy1
   steps:
   - intent: greet
@@ -37,7 +32,22 @@ stories:
   - action: utter_ask_stock_price
   - intent: stock
     entities:
-    - stock_type: "0001.HK"
+    - stock_type: 0001.HK
+  - action: action_stock_price
+  - intent: goodbye
+  - action: utter_goodbye
+- story: Story from Conversation ID 79f2a1744a3d4aa988a282408160ab03
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_stock_price
+  - action: utter_ask_stock_price
+  - intent: nlu_fallback
+    entities:
+    - stock_type: 0001.HK
+  - slot_was_set:
+    - stock_type: 0001.HK
+  - action: action_stock_price
   - action: action_stock_price
   - intent: goodbye
   - action: utter_goodbye
