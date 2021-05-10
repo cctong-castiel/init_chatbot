@@ -79,8 +79,7 @@ responses:
   - text: I am a bot, powered by Rasa.
   utter_unclear:
   - text: Sorry I don't understand. Can you repeat it?
-  utter_unclare:
-  - text: Sorry I don't understand. Can you repeat it?
+
 actions:
 - action_stock_price
 - utter_unclear

@@ -36,6 +36,7 @@ stories:
   - action: action_stock_price
   - intent: goodbye
   - action: utter_goodbye
+  
 - story: Story from Conversation ID 79f2a1744a3d4aa988a282408160ab03
   steps:
   - intent: greet
@@ -65,6 +66,7 @@ stories:
   - action: action_stock_price
   - intent: goodbye
   - action: utter_goodbye
+
 - story: Story from Conversation ID 0c8ad7b01e4047eb948d39536d380ab1
   steps:
   - intent: greet
@@ -77,6 +79,7 @@ stories:
   - slot_was_set:
     - stock_type: 0001.HK
   - action: utter_goodbye
+
 - story: Story from Conversation ID 64c653cd36c34c9e9e1776f9c698085f
   steps:
   - intent: greet
