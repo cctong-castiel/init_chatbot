@@ -112,6 +112,6 @@ nlu:
     - I want [0213.HK](stock_type)
     - give me [HSBC](stock_type)
     - i want [0001.HK](stock_type)
-- intent: utter_unclear
+- intent: nlu_fallback
   examples: |
-    - winnie the pooh
+    - check insurance
