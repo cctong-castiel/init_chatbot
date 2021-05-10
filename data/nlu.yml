@@ -1,5 +1,4 @@
 version: "2.0"
-
 nlu:
 - intent: greet
   examples: |
@@ -16,7 +15,6 @@ nlu:
     - goodmorning
     - goodevening
     - good afternoon
-
 - intent: goodbye
   examples: |
     - dockergood afternoon
@@ -30,7 +28,7 @@ nlu:
     - see you around
     - bye bye
     - see you later
-
+    - Goodbye
 - intent: affirm
   examples: |
     - yes
@@ -39,7 +37,7 @@ nlu:
     - of course
     - that sounds good
     - correct
-
+    - thank you
 - intent: deny
   examples: |
     - no
@@ -49,7 +47,6 @@ nlu:
     - don't like that
     - no way
     - not really
-
 - intent: mood_great
   examples: |
     - perfect
@@ -67,7 +64,6 @@ nlu:
     - so good
     - so perfect
     - extremely perfect
-
 - intent: mood_unhappy
   examples: |
     - my day was horrible
@@ -84,14 +80,12 @@ nlu:
     - extremly sad
     - so saad
     - so sad
-
 - intent: bot_challenge
   examples: |
     - are you a bot?
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
-
 - intent: ask_stock_price
   examples: |
     - ask_stock_price
@@ -108,7 +102,7 @@ nlu:
     - Give me [0003.HK](stock_type)
     - [0941.HK](stock_type) please
     - [1928.HK](stock_type) now
-
+    - ask stock price
 - intent: stock
   examples: |
     - [0939.HK](stock_type)
@@ -117,3 +111,7 @@ nlu:
     - [CITI](stock_type) now
     - I want [0213.HK](stock_type)
     - give me [HSBC](stock_type)
+    - i want [0001.HK](stock_type)
+- intent: utter_unclear
+  examples: |
+    - winnie the pooh

@@ -77,3 +77,21 @@ stories:
   - slot_was_set:
     - stock_type: 0001.HK
   - action: utter_goodbye
+- story: Story from Conversation ID 64c653cd36c34c9e9e1776f9c698085f
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_stock_price
+  - action: utter_ask_stock_price
+  - intent: utter_unclear
+  - action: utter_unclare
+  - intent: stock
+    entities:
+    - stock_type: 0001.HK
+  - slot_was_set:
+    - stock_type: 0001.HK
+  - action: action_stock_price
+  - intent: affirm
+  - action: utter_happy
+  - intent: goodbye
+  - action: utter_goodbye

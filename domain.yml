@@ -1,78 +1,89 @@
-version: "2.0"
-
-intents:
-  - greet
-  - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
-  - ask_stock_price
-  - stock
-
-actions:
-  - action_stock_price
-
-entities:
-  - stock_type
-
-slots:
-  stock_type:
-    type: categorical
-    values:
-      - AAPL
-      - HSBC
-      - ANZ
-      - WESTPAC
-      - UOB
-      - CITI
-      - 0001.HK
-      - 0002.HK
-      - 0003.HK
-      - 0004.HK
-      - 0005.HK
-      - 0006.HK
-      - 0007.HK
-      - 0011.HK
-      - 0012.HK
-      - 0066.HK
-      - 0083.HK
-      - 0101.HK
-      - 0386.HK
-      - 0288.HK
-      - 0939.HK
-      - 0941.HK
-      - 1113.HK
-      - 1109.HK
-      - 1928.HK
-
-
-
-
-responses:
-  utter_greet:
-  - text: "Hey! Nice to meet you. I am a Tong Cruise chatbot. I can help 'ask stock price', 'transfer money' and 'check balance'. Which one you want me to do?"
-
-  utter_ask_stock_price:
-  - text: "What stock you want to know?"
-
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-
-  utter_did_that_help:
-  - text: "Did that help you?"
-
-  utter_happy:
-  - text: "Great, carry on!"
-
-  utter_goodbye:
-  - text: "Bye"
-
-  utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
-
+version: '2.0'
+config:
+  store_entities_as_slots: true
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+intents:
+- greet:
+    use_entities: true
+- goodbye:
+    use_entities: true
+- affirm:
+    use_entities: true
+- deny:
+    use_entities: true
+- mood_great:
+    use_entities: true
+- mood_unhappy:
+    use_entities: true
+- bot_challenge:
+    use_entities: true
+- ask_stock_price:
+    use_entities: true
+- stock:
+    use_entities: true
+- nlu_fallback:
+    use_entities: true
+- utter_unclear:
+    use_entities: true
+entities:
+- stock_type
+slots:
+  stock_type:
+    type: rasa.shared.core.slots.CategoricalSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+    values:
+    - aapl
+    - hsbc
+    - anz
+    - westpac
+    - uob
+    - citi
+    - 0001.hk
+    - 0002.hk
+    - 0003.hk
+    - 0004.hk
+    - 0005.hk
+    - 0006.hk
+    - 0007.hk
+    - 0011.hk
+    - 0012.hk
+    - 0066.hk
+    - 0083.hk
+    - 0101.hk
+    - 0386.hk
+    - 0288.hk
+    - 0939.hk
+    - 0941.hk
+    - 1113.hk
+    - 1109.hk
+    - 1928.hk
+responses:
+  utter_greet:
+  - text: Hey! Nice to meet you. I am a Tong Cruise chatbot. I can help 'ask stock price', 'transfer money' and 'check balance'. Which one you want me to do?
+  utter_ask_stock_price:
+  - text: What stock you want to know?
+  utter_cheer_up:
+  - image: https://i.imgur.com/nGF1K8f.jpg
+    text: 'Here is something to cheer you up:'
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_unclear:
+  - text: Sorry I don't understand. Can you repeat it?
+  utter_unclare:
+  - text: Sorry I don't understand. Can you repeat it?
+actions:
+- action_stock_price
+- utter_unclear
+- utter_unclare
+forms: {}
+e2e_actions: []
