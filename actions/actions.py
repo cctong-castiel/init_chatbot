@@ -20,11 +20,11 @@ config.read('database.config')
 
 def create_con(config):
     
-    DBNAME = config['redshift']['DBNAME']
-    HOST = config['redshift']['HOST']
-    PORT = config['redshift']['PORT']
-    USER = config['redshift']['USER']
-    PASSWORD = config['redshift']['PASSWORD']
+    DBNAME = config['RDS']['DBNAME']
+    HOST = config['RDS']['HOST']
+    PORT = config['RDS']['PORT']
+    USER = config['RDS']['USER']
+    PASSWORD = config['RDS']['PASSWORD']
 
     con=psycopg2.connect(f"dbname={DBNAME} host={HOST} port={PORT} user={USER} password={PASSWORD}")
     return con
@@ -47,8 +47,8 @@ class ActionStockPrice(Action):
         if re.search(r"HK|hk", stock):
         	currency = 'HKD'
         	cur.execute(f'''
-                    SELECT stock, close_ FROM mzfdceqm.stock
-                    WHERE stock = '{stock}' AND Date = '{date}'
+                    SELECT stock, close_ FROM stock
+                    WHERE stock = '{stock}' AND date_ = '{date}'
                     LIMIT 1
                 ''')
         else:
