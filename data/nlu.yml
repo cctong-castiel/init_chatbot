@@ -103,6 +103,7 @@ nlu:
     - [0941.HK](stock_type) please
     - [1928.HK](stock_type) now
     - ask stock price
+    - check insurance
 - intent: stock
   examples: |
     - [0939.HK](stock_type)
@@ -112,6 +113,3 @@ nlu:
     - I want [0213.HK](stock_type)
     - give me [HSBC](stock_type)
     - i want [0001.HK](stock_type)
-- intent: nlu_fallback
-  examples: |
-    - check insurance
