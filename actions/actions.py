@@ -47,7 +47,7 @@ class ActionStockPrice(Action):
         if re.search(r"HK|hk", stock):
         	currency = 'HKD'
         	cur.execute(f'''
-                    SELECT stock, "Close" FROM chatbot.hk_stock
+                    SELECT stock, close_ FROM mzfdceqm.stock
                     WHERE stock = '{stock}' AND Date = '{date}'
                     LIMIT 1
                 ''')
