@@ -15,6 +15,7 @@ nlu:
     - goodmorning
     - goodevening
     - good afternoon
+
 - intent: goodbye
   examples: |
     - dockergood afternoon
@@ -29,6 +30,7 @@ nlu:
     - bye bye
     - see you later
     - Goodbye
+
 - intent: affirm
   examples: |
     - yes
@@ -38,6 +40,7 @@ nlu:
     - that sounds good
     - correct
     - thank you
+
 - intent: deny
   examples: |
     - no
@@ -47,6 +50,7 @@ nlu:
     - don't like that
     - no way
     - not really
+
 - intent: mood_great
   examples: |
     - perfect
@@ -64,6 +68,7 @@ nlu:
     - so good
     - so perfect
     - extremely perfect
+
 - intent: mood_unhappy
   examples: |
     - my day was horrible
@@ -80,12 +85,14 @@ nlu:
     - extremly sad
     - so saad
     - so sad
+
 - intent: bot_challenge
   examples: |
     - are you a bot?
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+
 - intent: ask_stock_price
   examples: |
     - ask_stock_price
@@ -103,6 +110,7 @@ nlu:
     - [0941.HK](stock_type) please
     - [1928.HK](stock_type) now
     - ask stock price
+
 - intent: stock
   examples: |
     - [0939.HK](stock_type)
@@ -112,6 +120,26 @@ nlu:
     - I want [0213.HK](stock_type)
     - give me [HSBC](stock_type)
     - i want [0001.HK](stock_type)
+
 - intent: nlu_fallback
   examples: |
     - check insurance
+
+- intent: query_knowledge_base
+  examples: |
+    - what [restaurants]{"entity": "object_type", "value": "restaurant"} can you recommend?
+    - list some [restaurants]{"entity": "object_type", "value": "restaurant"}
+    - can you name some [restaurants]{"entity": "object_type", "value": "restaurant"} please?
+    - can you show me some [restaurants]{"entity": "object_type", "value": "restaurant"} options
+    - list [German](cuisine) [restaurants]{"entity": "object_type", "value": "restaurant"}
+    - do you have any [mexican](cuisine) [restaurants]{"entity": "object_type", "value": "restaurant"}?
+    - do you know the [price range]{"entity": "attribute", "value": "price-range"} of [that one](mention)?
+    - what [cuisine](attribute) is [it](mention)?
+    - do you know what [cuisine](attribute) the [last one]{"entity": "mention", "value": "LAST"} has?
+    - does the [first one]{"entity": "mention", "value": "1"} have [outside seating]{"entity": "attribute", "value": "outside-seating"}?
+    - what is the [price range]{"entity": "attribute", "value": "price-range"} of [Berlin Burrito Company](restaurant)?
+    - what about [I due forni](restaurant)?
+    - can you tell me the [price range](attribute) of [that restaurant](mention)?
+    - what [cuisine](attribute) do [they](mention) have?
+    - What [Italian](cuisine) [restaurant](object_type) options in [Berlin](city) do I have?.
+    - What is the [cuisine](attribute) of [Berlin Burrito Company](restaurant)?

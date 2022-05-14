@@ -25,14 +25,26 @@ intents:
     use_entities: true
 - nlu_fallback:
     use_entities: true
+- query_knowledge_base:
+    use_entities: true
 
 entities:
-- stock_type
+  - stock_type
+  - object_type
+  - mention
+  - attribute
+  - hotel
+  - restaurant
+  - cuisine
+  - city
+
 slots:
   stock_type:
-    type: rasa.shared.core.slots.CategoricalSlot
+    type: categorical
+    mappings:
+    - type: from_entity 
+      entity: stock_type
     initial_value: null
-    auto_fill: true
     influence_conversation: true
     values:
     - aapl
@@ -60,6 +72,49 @@ slots:
     - 1113.hk
     - 1109.hk
     - 1928.hk
+  object_type:
+    type: any
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: object_type
+  mention:
+    type: any
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: mention
+  attribute:
+    type: any
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: attribute
+  hotel:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: hotel
+  restaurant:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: restaurant
+  city:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: city
+  cuisine:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: cuisine
+  
 responses:
   utter_greet:
   - text: Hey! Nice to meet you. I am a Tong Cruise chatbot. I can help 'ask stock price', 'transfer money' and 'check balance'. Which one you want me to do?
@@ -78,10 +133,12 @@ responses:
   - text: I am a bot, powered by Rasa.
   utter_unclear:
   - text: Sorry I don't understand. Can you repeat it?
+  utter_ask_rephrase:
+  - text: "Sorry, I'm not sure I understand. Could you rephrase it?"
+  - text: "Could you please rephrase your message? I didn't quite get that."
 
 actions:
 - action_stock_price
 - utter_unclear
-
-forms: {}
-e2e_actions: []
+- action_query_knowledge_base
+- action_knowledgebase_get_attribute

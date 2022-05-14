@@ -3,3 +3,5 @@ models/*
 doc/*
 actions/__pycache__/**
 actions/__pycache__/*
+.rasa/**
+story_graph.dot
