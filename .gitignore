@@ -1,1 +1,5 @@
 database.config
+models/*
+doc/*
+actions/__pycache__/**
+actions/__pycache__/*
